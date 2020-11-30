@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scoreSearch</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            height:100%;
+        }
+        .background{
+            /*position: absolute;*/
+            height: 100%;
+            width: 100%;
+            display: block;
+            background: url(https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/%E5%9B%BE%E7%89%87%201.png) no-repeat;
+            /*opacity: 0.7;*/
+            background-size:cover; /*cover：页面拉伸时，图片不会变形*/
+            background-position: 100% 100%;
+            /*-webkit-filter: blur(15px);*/
+            /*-moz-filter: blur(15px);*/
+            /*-o-filter: blur(15px);*/
+            /*-ms-filter: blur(15px);*/
+            /*filter: blur(15px);*/
+        }
+        table{
+            position: absolute;
+            padding:15px 0 15px 0;
+            margin:100px 37% 0 37%;
+            width:500px;
+            height:300px;
+            border:1px solid white;
+            border-radius:5px;
+            text-align:center;
+            font-family:"微软雅黑";
+            font-weight:300;
+            font-size:20px;
+            color:white;
+
+            /*box-shadow:10px 10px 15px gray;*/
+        }
+        button{
+            margin:10px;
+            padding: 1px 20px;
+            font-size:25px;
+            border:1px solid white;
+            border-radius:5px;
+            text-decoration:none;
+            font-family:"微软雅黑";
+            font-weight:300;
+            font-size:20px;
+            color:black;
+        }
+        a:hover{
+            color:gray;
+            margin:10px;
+            padding: 1px 20px;
+            font-size:25px;
+            border:1px solid grey;
+            border-radius:5px;
+            text-decoration:none ;
+        }
+        td{
+            border-radius: 2px;
+        }
+
+
+
+    </style>
+</head>
+
+
+<body class="background">
+    {% if msg %}
+    <div>msg</div>
+    {% endif %}
+    <form action="/scoresSearch" method="post">
+        <table>
+            <caption><font size="6px"><b>深信息学生信息查询系统</b></font></caption>
+            <tr>
+                <td for="exampleInputEmail1">学&nbsp;&nbsp;号:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="user" checked="checked"></td>
+            </tr>
+            <tr>
+                <td for="exampleInputPassword1">密&nbsp;&nbsp;码:&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password" ></td>
+            </tr>
+            <tr>
+                <td><button type="submit">查询成绩</button></td>
+            </tr>
+
+        </table>
+
+    </form>
+</body>
+</html>

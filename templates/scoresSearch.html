@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scoreSearch</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<style>
+    body{
+        {#background: url("{% static 'img/main2.jpg'%}") no-repeat;#}
+        background-color:lightgray;
+        opacity: .5;
+        color:white;
+        }
+</style>
+<body>
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">学年</th>
+            <th scope="col">课程名称</th>
+            <th scope="col">教师姓名</th>
+            <th scope="col">课程类别</th>
+            <th scope="col">成绩</th>
+            <th scope="col">绩点</th>
+            <th scope="col">学分</th>
+
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in detailData %}
+                <tr>
+                    <th>{{i.序号}}</th>
+                    <th scope="row">{{i.学年}}
+                    <td>{{i.课程名称}}</td>
+                    <td>{{i.教师姓名}}</td>
+                    <td>{{i.课程类别}}</td>
+                    <td>{{i.成绩}}</td>
+                    <td>{{i.绩点}}</td>
+                    <td>{{i.学分}}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <th>平均绩点：{{aveJd}}</th>
+            </tr>
+
+        </tbody>
+      </table>
+      {% if msg %}
+        <div class="alert alert-success">{{msg}}</div>
+        <a href="/">返回查询页面</a>
+      {% endif %}
+</body>
+</html>
