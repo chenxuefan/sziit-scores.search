@@ -1,5 +1,7 @@
 git init
 git remote rm origin
+git config --global user.email "2380540710@qq.com"
+git config --global user.name "chenxuefan"
 git remote add origin https://github.com/chenxuefan/SZIIT-scoresSearch.git
 git add .
 git commit -m "update"
