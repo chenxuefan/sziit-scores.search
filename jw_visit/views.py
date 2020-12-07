@@ -167,3 +167,4 @@ def scoresSearch(request):
     except:
         msg="查询错误,请检查学号和密码是否正确"
     return render(request,'scoresSearch.html',locals())
+
