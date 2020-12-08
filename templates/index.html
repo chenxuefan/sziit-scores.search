@@ -5,40 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>scoreSearch</title>
-
     <style>
-        @media screen and (max-width: 400px) {
-            table{
-            position: absolute;
-            padding:15px 0 15px 0;
-            margin:100px 37% 0 37%;
-            width:300px;
-            height:300px;
-            border:1px solid white;
-            border-radius:5px;
-            text-align:center;
-            font-family:"微软雅黑";
-            font-weight:300;
-            font-size:20px;
-            color:white;
-
-            /*box-shadow:10px 10px 15px gray;*/
-            }
-        }
-        * {
-            margin: 0;
-            padding: 0;
-        }
         html{
             height:100%;
-        }
-        .background{
-            /*position: absolute;*/
-            height: 100%;
             width: 100%;
-            display: block;
+            position: absolute;
             background: url(https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/%E5%9B%BE%E7%89%87%201.png) no-repeat;
-            /*opacity: 0.7;*/
             background-size:cover; /*cover：页面拉伸时，图片不会变形*/
             background-position: 100% 100%;
             /*-webkit-filter: blur(15px);*/
@@ -47,10 +19,20 @@
             /*-ms-filter: blur(15px);*/
             /*filter: blur(15px);*/
         }
+        @media screen and (max-width: 800px) {
+            table{
+
+                width:300px!important;
+            }
+            caption{
+                font-size: 25px !important;
+            }
+        }
+
+
         table{
-            position: absolute;
-            padding:15px 0 15px 0;
-            margin:100px 37% 0 37%;
+            position: relative;
+            margin:100px auto;
             width:500px;
             height:300px;
             border:1px solid white;
@@ -63,20 +45,20 @@
 
             /*box-shadow:10px 10px 15px gray;*/
         }
+        caption{
+            font-size: 36px;
+        }
         button{
-            margin:10px;
-            padding: 1px 20px;
-            font-size:25px;
             border:1px solid white;
-            border-radius:5px;
-            text-decoration:none;
+            border-radius:4px;
+            background:none;
             font-family:"微软雅黑";
             font-weight:300;
             font-size:20px;
-            color:black;
+            color:white;
         }
-        a:hover{
-            color:gray;
+        button:hover{
+            background-color:gray;
             margin:10px;
             padding: 1px 20px;
             font-size:25px;
@@ -85,27 +67,46 @@
             text-decoration:none ;
         }
         td{
-            border-radius: 2px;
+            border-radius: 4px;
+        }
+        input{
+            /*height: 25px;*/
+            line-height: 25px;
+            border: 1px solid white;
+            border-radius: 4px;
         }
 
+        footer{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            height: 40px;
+            width: 100%;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+            font-size: 10px;
+            background-color:#4E6C79;
+        }
 
 
     </style>
 </head>
 
 
-<body class="background">
+<body>
     {% if msg %}
     <div>msg</div>
     {% endif %}
     <form action="/scoresSearch" method="post">
         <table>
-            <caption><font size="6px"><b>深信息学生信息查询系统</b></font></caption>
+            <caption><b>深信息学生信息查询系统</b></caption>
             <tr>
-                <td for="exampleInputEmail1">学&nbsp;&nbsp;号:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="user" checked="checked"></td>
+                <td for="exampleInputEmail1">学&nbsp;&nbsp;号:&nbsp;&nbsp;<input type="text" name="user" checked="checked"></td>
             </tr>
             <tr>
-                <td for="exampleInputPassword1">密&nbsp;&nbsp;码:&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password" ></td>
+                <td for="exampleInputPassword1">密&nbsp;&nbsp;码:&nbsp;&nbsp;<input type="password" name="password" ></td>
             </tr>
             <tr>
                 <td><button type="submit">查询成绩</button></td>
@@ -114,5 +115,7 @@
         </table>
 
     </form>
+
 </body>
+<footer>Copyright © billie 粤ICP备20025795号-1</footer>
 </html>

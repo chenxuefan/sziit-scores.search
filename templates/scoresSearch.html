@@ -6,21 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>scoreSearch</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-</head>
-<style>
+    <style>
     body{
         {#background: url("{% static 'img/main2.jpg'%}") no-repeat;#}
         background-color:lightgray;
         opacity: .5;
         color:white;
         }
+        @media screen and (max-width: 400px) {
+            table{
+                font-size: 0.01em !important;
+            }
+            #hide{
+                display: none;
+            }
+        }
+
 </style>
+</head>
+
 <body>
       <table class="table">
         <thead class="thead-light">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">学年</th>
+            <th id="hide" scope="col">#</th>
+            <th id="hide" scope="col">学年</th>
             <th scope="col">课程名称</th>
             <th scope="col">教师姓名</th>
             <th scope="col">课程类别</th>
@@ -33,8 +43,8 @@
         <tbody>
             {% for i in detailData %}
                 <tr>
-                    <th>{{i.序号}}</th>
-                    <th scope="row">{{i.学年}}
+                    <th id="hide">{{i.序号}}</th>
+                    <th id="hide" scope="row">{{i.学年}}
                     <td>{{i.课程名称}}</td>
                     <td>{{i.教师姓名}}</td>
                     <td>{{i.课程类别}}</td>
@@ -44,7 +54,7 @@
                 </tr>
             {% endfor %}
             <tr>
-                <th>平均绩点：{{aveJd}}</th>
+                <th colspan="3">平均绩点：{{aveJd}}</th>
             </tr>
 
         </tbody>
