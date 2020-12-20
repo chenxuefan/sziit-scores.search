@@ -129,8 +129,7 @@ def scoresSearch(request):
             # 登陆所需的几个参数
             user=request.POST.get("user","")
             passwd=request.POST.get("password","")
-            # base_url = "http://xjwgl.sziit.edu.cn/xtgl/login_slogin.html"
-            base_url = "http://xjwgl2020.frp.sziitjx.cn:8080"
+            base_url = "http://xjwgl.sziit.edu.cn/xtgl/login_slogin.html"
             login_url = base_url + "/xtgl/login_slogin.html?language=zh_CN&_t="  # 登录主页 url
             login_KeyUrl = base_url+"/xtgl/login_getPublicKey.html?time="  # 获取公钥参数的 url
 
